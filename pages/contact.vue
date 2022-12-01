@@ -1,14 +1,20 @@
 <template>
   <div class="first-div">
     <div class="grid-container">
-      <div class="second-div" v-for="(details, index) in contact" :key="index" >
+      <div
+        class="second-div"
+        v-for="(details, index) in contact"
+        :key="index"
+        @mouseover="startHover(index)"
+        @mouseleave="stopHover(index)"
+      >
         <a :href="details.link" target="blank">
           <img class="symbols" :src="details.heart" />
         </a>
-        <a class="text" :href="details.link" target="blank">
-          <p class="name">{{ details.name }}</p>
+        <a class="boxx" :href="details.link" target="blank">
+          <button class="text" :class="{ highlight: details.textbox }">{{ details.name }}</button>
         </a>
-        <p class="info">{{details.info}}</p>
+        <p class="info" v-if="details.textbox">{{ details.info }}</p>
       </div>
     </div>
   </div>
@@ -18,6 +24,7 @@
 export default {
   data() {
     return {
+      texting: false,
       contact: [
         {
           index: 1,
@@ -26,6 +33,7 @@ export default {
           link: "tel:+2348126337630",
           isActiveMobile: false,
           info: "CALL",
+          textbox: false,
         },
         {
           index: 2,
@@ -34,6 +42,7 @@ export default {
           link: "mailto:joshuaegbuonu@gmail.com",
           isActiveMobile: false,
           info: "joshuaegbuonu@gmail.com",
+          textbox: false,
         },
         {
           index: 3,
@@ -42,6 +51,7 @@ export default {
           link: "https://www.linkedin.com/in/joshua-egbuonu-8b1479228",
           isActiveMobile: false,
           info: "https://www.linkedin.com/in/joshua-egbuonu-8b1479228",
+          textbox: false,
         },
         {
           index: 4,
@@ -49,18 +59,29 @@ export default {
           heart: "github.svg",
           link: "https://github.com/chizalum",
           isActiveMobile: false,
-          info: "https://github.com/chizalum"
+          info: "https://github.com/chizalum",
+          textbox: false,
         },
         {
-          index: 4,
+          index: 5,
           name: "Send a text",
           heart: "text.svg",
           link: "sms:08126337630?body= I'll like to make an enquiry about your services",
           isActiveMobile: false,
           info: "TEXT",
+          textbox: false,
         },
       ],
     };
+  },
+
+  methods: {
+    startHover(index) {
+      this.contact[index].textbox = true;
+    },
+    stopHover(index) {
+      this.contact[index].textbox = false;
+    },
   },
 };
 </script>
@@ -70,7 +91,6 @@ export default {
   display: flex;
   flex-direction: row;
   margin: 0 0 0 0;
-  background: whitesmoke;
   width: 100vw;
   height: 100vh;
   justify-content: center;
@@ -98,20 +118,29 @@ export default {
   margin: 70px 0 0 0;
   width: 300px;
   height: 30vh;
-  background: linear-gradient(180deg,#F5F5F5, #E9DDD4);
+  background: linear-gradient(180deg, #f5f5f5, #e9ddd4);
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
-.second-div{
+.second-div {
   display: flex;
   flex-direction: column;
   margin: 70px 0 0 0;
   width: 300px;
   height: 30vh;
-  background: linear-gradient(180deg,#F5F5F5, #C2C2C2);
+  background: linear-gradient(180deg, #f5f5f5, #c2c2c2);
   align-items: center;
   justify-content: center;
+  text-align: center;
+  backdrop-filter: saturate(180%) blur(10px);
+}
+
+.boxx {
+  margin: 25px 0 0 0;
+  word-wrap: break-word;
+  cursor: pointer;
 }
 
 .text {
@@ -121,17 +150,58 @@ export default {
   text-decoration: none;
   color: black;
   word-wrap: break-word;
+  background: rgb(147, 155, 146);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.name{
-
+.highlight{
+  font-family: "RobotoMono-VariableFont_wght";
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  word-wrap: break-word;
+  background: rgb(159, 206, 142);
+  border: none;
+  width: 100%;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.info{
+.info {
   word-wrap: break-word;
   font-family: "Raleway-VariableFont_wght";
   font-weight: 400;
-  font-size: 13px;
-  margin: 0 0 0 0;
+  font-size: 12px;
+  margin: 30px auto 0 auto;
+  padding: 0 auto 0 auto;
+}
+
+@media (max-width: 950px) {
+  .grid-container {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  width: 92%;
+  justify-content: center;
+  row-gap: 70px;
+  column-gap: 12%;
+  margin: auto auto auto auto;
+}
+}
+
+
+@media (max-width: 650px) {
+
+  .grid-container {
+  display: grid;
+  grid-template-columns: 300px;
+  width: 92%;
+  justify-content: center;
+  row-gap: 70px;
+  column-gap: 12%;
+  margin: auto auto auto auto;
+}
 }
 </style>

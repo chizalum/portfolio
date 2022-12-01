@@ -10,8 +10,15 @@
         </h1>
         <p class="roles">Developer / Engineer / Freelancer</p>
         <div class="buttons">
-          <button class="btn-1">Hire Me</button>
-          <button class="btn-2">Portfolio</button>
+          <a href="mailto:joshuaegbuonu@gmail.com" target="blank">
+            <button class="btn-1">Hire Me</button></a
+          >
+          <a
+            href="https://drive.google.com/file/d/1ybXWFFsz5Ituwu8XqPlaNIiJzLC62rho/view?usp=sharing"
+            target="blank"
+          >
+            <button class="btn-2">Resume</button></a
+          >
         </div>
       </div>
       <img src="profile-pic.png" class="profile-pic" alt="profile-pic" />
@@ -33,7 +40,6 @@
           download
           target="blank"
         >
-          <button class="btn-3">View CV</button>
         </a>
       </div>
     </div>
@@ -42,33 +48,39 @@
       <P class="do">What I do for you</P>
       <div class="duties-container">
         <div class="duties">
-          <img src="app.svg" class="icons" />
+          <img src="ig-profile.svg" class="icons" />
           <p class="web">Web Applications</p>
           <p class="lorem">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut nobis
-            porro molestias dolorum sunt eius odio numquam delectus fugit? Odio,
-            id cum! Ab quisquam quo sapiente molestiae consequuntur libero
-            nobis.
+            Create <span class="span">WEB APPLICATIONS</span> for your business.
           </p>
+          <P class="description"
+            >Use these dynamic websites to interact with customers, sell goods
+            and services, pass information and recieve information. These could
+            include online forms, shopping carts, word processors and file
+            conversion websites.</P
+          >
         </div>
         <div class="duties">
-          <img src="email-icon.svg" class="icons" />
+          <img src="blue-mail.svg" class="icons" />
           <p class="web">Email Templates</p>
           <p class="lorem">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut nobis
-            porro molestias dolorum sunt eius odio numquam delectus fugit? Odio,
-            id cum! Ab quisquam quo sapiente molestiae consequuntur libero
-            nobis.
+            Create beautiful <span class="span">EMAIL TEMPLATES</span> for your business.
+          </p>
+          <p class="description">
+            Send html mails to a mail list and advertise your service or
+            business.
           </p>
         </div>
         <div class="duties">
-          <img src="dev.svg" class="icons" />
+          <img src="red-site.svg" class="icons" />
           <p class="web">Static Web Pages</p>
           <p class="lorem">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut nobis
-            porro molestias dolorum sunt eius odio numquam delectus fugit? Odio,
-            id cum! Ab quisquam quo sapiente molestiae consequuntur libero
-            nobis.
+            Create <span class="span"> STATIC WEBSITES</span> for your business.
+          </p>
+          <p class="description">
+            These are small websites that are limited in content, and don't
+            require frequent updates. This includes brochure websites, one-off
+            landing pages, and other informational or read-only sites.
           </p>
         </div>
       </div>
@@ -199,23 +211,13 @@ export default {
   margin: 25px 0 0 25px;
 }
 
-.btn-3 {
-  width: 160px;
-  height: 50px;
-  border-radius: 12px;
-  background: #c8d8e4;
-  border: none;
-  font-family: "Raleway-VariableFont_wght";
-  font-size: 20px;
-  cursor: pointer;
-  margin: 25px 0 0 25px;
-}
 
 .last-layer {
   display: flex;
   flex-direction: column;
   background: whitesmoke;
   height: auto;
+  padding: 0 0 70px 0;
 }
 
 .services {
@@ -238,8 +240,16 @@ export default {
 .duties {
   width: 450px;
   height: 280px;
-  background: #703f37;
+  background: linear-gradient(180deg, #f5f5f5, #e9ddd4);
+  backdrop-filter: saturate(180%) blur(10px);
   margin: 70px 50px;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .duties {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
 }
 
 .duties-container {
@@ -255,11 +265,35 @@ export default {
 
 .web {
   margin: 20px 0 0 30px;
-  color: #9c8321;
+  color: #685612;
+  text-decoration: solid;
+  font-size: 20px;
+  font-family: "Raleway-VariableFont_wght";
+  font-weight: 900;
+}
+
+.span{
+  color: #685612;
+  text-decoration: solid;
+  font-size: 15px;
+  font-family: "Raleway-VariableFont_wght";
+  font-weight: 600;
 }
 
 .lorem {
-  margin: 20px 0 0 30px;
+  font-family: "Raleway-VariableFont_wght";
+  font-weight: 40;
+  font-size: 14px;
+  margin: 20px 25px 0 30px;
+  font-weight: 300;
+}
+
+.description{
+  margin: 20px 25px 0 30px;
+  font-family: "Aboreto-Regular";
+  font-weight: 3;
+  font-size: 13px;
+  font-weight: 200;
 }
 
 @media (max-width: 1309px) {
@@ -277,29 +311,52 @@ export default {
   }
 
   .duties {
-  width: 450px;
-  height: 280px;
-  background: rgb(235, 226, 226);
-  margin: 20px auto 0 auto;
+    width: 450px;
+    height: 280px;
+    background: rgb(235, 226, 226);
+    margin: 20px auto 0 auto;
+  }
+
+  .personal-logo {
+    margin: 0 auto 0 auto;
+  }
+
+  .top-shelf {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    margin: 115px auto 0 auto;
+  }
+
+  .profile-pic {
+    margin-left: 8px;
+  }
+
+  .intro {
+    margin-left: 8px;
+  }
+
+  .personal-logo {
+  height: fit-content;
+  width: 80%;
 }
 
-.personal-logo {
-  margin: 0 auto 0 auto;
+.do {
+  font-family: "Aboreto-Regular";
+  font-weight: 800;
+  font-size: 36px;
+  color: rgb(63, 50, 50);
+  text-align: center;
+  margin: 70px auto 0 auto;
+}
 }
 
-.top-shelf {
-  display: flex;
-  flex-direction: column-reverse;
-  width: 100%;
-  margin: 115px auto 0 auto;
-}
-
-.profile-pic {
-  margin-left: 8px;
-}
-
-.intro {
-  margin-left: 8px;
-}
+@media (max-width: 450px) {
+  .duties {
+    width: 95%;
+    height: 320px;
+    background: rgb(235, 226, 226);
+    margin: 20px auto 0 auto;
+  }
 }
 </style>

@@ -9,9 +9,6 @@
      <div class="footer">
       <div class="sub-foot">
       <img class="symbols3" src="plant.svg">
-      <p class="zalum">Zalum</p>
-      <img class="symbols" src="copyright-symbol.svg">
-      <p>Copyright 2022. Developed by chizalum</p>
       </div>
       <div class="sub-foot1">
          <a
@@ -54,6 +51,7 @@ export default {
   background: rgb(208, 225, 201);
   align-items: center;
   justify-content: flex-end;
+  z-index: 10000;
 }
 
 
@@ -62,6 +60,7 @@ export default {
   margin: auto 50px auto 0;
   text-decoration: none;
   font-family: "RubikMaze";
+  font-size: 18px;
 }
 
 a.nuxt-link-exact-active {
@@ -82,6 +81,7 @@ a.nuxt-link-exact-active {
   align-items: center;
   justify-content: space-between;
   white-space: nowrap;
+  z-index: 10000;
 }
 
 .symbols{
@@ -93,13 +93,12 @@ a.nuxt-link-exact-active {
 .symbols3{
   height: 30px;
   width: 30px;
-  margin: auto 0 auto 0;
+  margin: auto 0 auto 18px;
 }
 
 .sub-foot{
   display: flex;
   flex-direction: row;
-  width: 450px;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -110,5 +109,36 @@ a.nuxt-link-exact-active {
   width: 150px;
   justify-content: space-evenly;
   align-items: center;
+}
+
+@media (max-width: 600px){
+  .navigation {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 0 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background: rgb(208, 225, 201);
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.nav-link {
+  color: rgb(119, 107, 92);
+  margin: auto auto auto auto;
+  text-decoration: none;
+  font-family: "RubikMaze";
+  font-size: 14px;
+}
+
+a.nuxt-link-exact-active {
+  color: #c69f73;
+  font-weight: 700;
+  font-size: 18px;
+}
 }
 </style>
