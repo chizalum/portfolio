@@ -91,7 +91,7 @@ export default {
 
 .second-layer {
   margin: 0 0 0 0;
-  background: rgb(235, 226, 226);
+  background: #365544;
   display: flex;
   flex-direction: row;
 }
@@ -107,6 +107,7 @@ export default {
   margin: 87px 0 0 18px;
   font-weight: 0;
   text-align: center;
+  color: #BCC0BA;
 }
 
 .passion {
@@ -116,6 +117,7 @@ export default {
   margin: 65px 0 0 18px;
   font-weight: 1000;
   text-align: center;
+  color: #BCC0BA;
 }
 
 .tech {
@@ -123,16 +125,17 @@ export default {
   font-weight: 400;
   font-size: 27px;
   margin: 25px 0 105px 18px;
+  color: #BCC0BA;
 }
 
 .pre-third {
-  background: rgb(235, 226, 226);
+  background: #365544;
   margin: 0 0 0 0;
 }
 
 .third-layer {
   margin: 0 0 0 0;
-  background: rgb(235, 226, 226);
+  background: #365544;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -162,17 +165,20 @@ export default {
 .name-col {
   font-family: "Raleway-VariableFont_wght";
   font-size: 26px;
+  color: white;
   
 }
 
 .from-col {
   font-family: "Raleway-VariableFont_wght";
   font-size: 26px;
+  color: white;
 }
 
 .span {
   font-family: "RobotoMono-VariableFont_wght";
   font-size: 26px;
+  color: #BCC0BA;
 }
 
 .link {
@@ -194,7 +200,7 @@ export default {
 .last-layer {
   display: flex;
   flex-direction: column;
-  background: whitesmoke;
+  background: #365544;
   height: auto;
 }
 

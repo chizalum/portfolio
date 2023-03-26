@@ -1,38 +1,38 @@
 @font-face {
-    font-family: "RubikMaze";
-    src: url('~assets/RubikMaze-Regular.ttf') format("woff");
+  font-family: "RubikMaze";
+  src: url("~assets/RubikMaze-Regular.ttf") format("woff");
 }
 
 @font-face {
-    font-family: "Aboreto-Regular";
-    src: url('~assets/Aboreto-Regular.ttf') format("woff");
+  font-family: "Aboreto-Regular";
+  src: url("~assets/Aboreto-Regular.ttf") format("woff");
 }
 
 @font-face {
-    font-family: "Raleway-VariableFont_wght";
-    src: url('~assets/Raleway-VariableFont_wght.ttf') format("woff");
+  font-family: "Raleway-VariableFont_wght";
+  src: url("~assets/Raleway-VariableFont_wght.ttf") format("woff");
 }
 
 @font-face {
-    font-family: "RobotoMono-VariableFont_wght";
-    src: url('~assets/RobotoMono-VariableFont_wght.ttf') format("woff");
+  font-family: "RobotoMono-VariableFont_wght";
+  src: url("~assets/RobotoMono-VariableFont_wght.ttf") format("woff");
 }
 
 body,
 html {
-    height: 100vh;
-    width: 100vw;
-    background: #bdd99e;
-    overflow-x:hidden;
+  height: 100vh;
+  width: 100vw;
+  background: #01151f;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
-
 
 .page-enter-active,
 .page-leave-active {
-    transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 .page-enter,
 .page-leave-active {
-    opacity: 0;
+  opacity: 0;
 }

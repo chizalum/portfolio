@@ -48,7 +48,6 @@ export default {
   left: 0;
   width: 100%;
   height: 65px;
-  background: rgb(208, 225, 201);
   align-items: center;
   justify-content: flex-end;
   z-index: 10000;
@@ -64,7 +63,7 @@ export default {
 }
 
 a.nuxt-link-exact-active {
-  color: #c69f73;
+  color: rgb(68, 149, 68);
   font-weight: 700;
   font-size: 22px;
 }
@@ -74,7 +73,6 @@ a.nuxt-link-exact-active {
   flex-direction: row;
   height: 35px;
   width: 100vw;
-  background: rgb(187, 190, 171, 0.97);
   position: fixed;
   bottom: 0;
   left: 0;

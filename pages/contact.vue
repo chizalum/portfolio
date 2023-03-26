@@ -12,7 +12,9 @@
           <img class="symbols" :src="details.heart" />
         </a>
         <a class="boxx" :href="details.link" target="blank">
-          <button class="text" :class="{ highlight: details.textbox }">{{ details.name }}</button>
+          <button class="text" :class="{ highlight: details.textbox }">
+            {{ details.name }}
+          </button>
         </a>
         <p class="info" v-if="details.textbox">{{ details.info }}</p>
       </div>
@@ -91,10 +93,12 @@ export default {
   display: flex;
   flex-direction: row;
   margin: 0 0 0 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
+  background: #AAADC4;
+  padding: 10px 0 10px 0;
 }
 
 .grid-container {
@@ -105,6 +109,7 @@ export default {
   row-gap: 70px;
   column-gap: 12%;
   margin: auto auto auto auto;
+  padding: 30px 0 30px 0;
 }
 .symbols {
   margin: 0 0 0 0;
@@ -116,9 +121,9 @@ export default {
   display: flex;
   flex-direction: column;
   margin: 70px 0 0 0;
-  width: 300px;
-  height: 30vh;
-  background: linear-gradient(180deg, #f5f5f5, #e9ddd4);
+  width: 220px;
+  height: 380px;
+  background: #229CBF;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -128,13 +133,33 @@ export default {
   display: flex;
   flex-direction: column;
   margin: 70px 0 0 0;
-  width: 300px;
-  height: 30vh;
-  background: linear-gradient(180deg, #f5f5f5, #c2c2c2);
+  width: 220px;
+  height: 380px;
   align-items: center;
   justify-content: center;
   text-align: center;
-  backdrop-filter: saturate(180%) blur(10px);
+  opacity: 0.6;
+  background: hsla(239, 94%, 14%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(239, 94%, 14%, 1) 0%,
+    hsla(190, 68%, 50%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(239, 94%, 14%, 1) 0%,
+    hsla(190, 68%, 50%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(239, 94%, 14%, 1) 0%,
+    hsla(190, 68%, 50%, 1) 100%
+  );
+
+  border-radius: 14px 14px 14px 14px;
 }
 
 .boxx {
@@ -148,7 +173,7 @@ export default {
   font-size: 18px;
   margin: 25px 0 0 0;
   text-decoration: none;
-  color: black;
+  color: white;
   word-wrap: break-word;
   background: rgb(147, 155, 146);
   border: none;
@@ -156,7 +181,7 @@ export default {
   cursor: pointer;
 }
 
-.highlight{
+.highlight {
   font-family: "RobotoMono-VariableFont_wght";
   font-size: 18px;
   text-decoration: none;
@@ -181,27 +206,25 @@ export default {
 
 @media (max-width: 950px) {
   .grid-container {
-  display: grid;
-  grid-template-columns: 300px 300px;
-  width: 92%;
-  justify-content: center;
-  row-gap: 70px;
-  column-gap: 12%;
-  margin: auto auto auto auto;
+    display: grid;
+    grid-template-columns: 300px 300px;
+    width: 92%;
+    justify-content: center;
+    row-gap: 70px;
+    column-gap: 12%;
+    margin: auto auto auto auto;
+  }
 }
-}
-
 
 @media (max-width: 650px) {
-
   .grid-container {
-  display: grid;
-  grid-template-columns: 300px;
-  width: 92%;
-  justify-content: center;
-  row-gap: 70px;
-  column-gap: 12%;
-  margin: auto auto auto auto;
-}
+    display: grid;
+    grid-template-columns: 300px;
+    width: 92%;
+    justify-content: center;
+    row-gap: 70px;
+    column-gap: 12%;
+    margin: auto auto auto auto;
+  }
 }
 </style>
