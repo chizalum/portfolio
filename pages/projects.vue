@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="last-layer">
-      <p class="services">SERVICES</p>
       <P class="do">What I do for you</P>
       <div class="duties-container">
         <div class="duties">
@@ -32,13 +31,6 @@ export default {
   height: auto;
 }
 
-.services {
-  font-family: "Raleway-VariableFont_wght";
-  font-weight: 0;
-  font-size: 22px;
-  margin: 70px auto 0 auto;
-  text-align: center;
-}
 
 .do {
   font-family: "Aboreto-Regular";

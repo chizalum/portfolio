@@ -34,9 +34,8 @@
     <section class="about-layer">
       <div class="central-div">
         <p class="moi">About Me</p>
-
         <hr class="horizontal" />
-        <div class="about-grid">
+        <div class="about-flex">
           <div class="grid-item">
             <p class="desc">
               "Hi! my name is Joshua and I have a passion for developing user
@@ -48,6 +47,8 @@
           <div class="grid-item">
             <img src="about-pic.jpeg" class="profile-pic" alt="profile-pic" />
           </div>
+        </div>
+        <div class="about-flex1">
           <div class="grid-item">
             <p class="desc">
               I specialize in developing intuitive user interfaces that enhance
@@ -58,56 +59,101 @@
           <div class="grid-item">
             <p class="desc">I'm proficient in :</p>
             <div class="second-grid">
-              <p class="frame">HTML</p>
-              <p class="frame">CSS</p>
-              <p class="frame">JavaScript</p>
-              <p class="frame">Wordpress</p>
-              <p class="frame">Vue</p>
+              <div class="frame">HTML</div>
+              <div class="frame">CSS</div>
+              <div class="frame">JavaScript</div>
+              <div class="frame">Wordpress</div>
+              <div class="frame">Vue.js</div>
+              <div class="frame">Nuxt.js</div>
             </div>
           </div>
         </div>
       </div>
     </section>
     <section class="last-layer">
-      <p class="services">SERVICES</p>
-      <P class="do">What I do for you</P>
-      <div class="duties-container">
-        <div class="duties">
-          <img src="ig-profile.svg" class="icons" />
-          <p class="web">Web Applications</p>
-          <p class="lorem">
-            Create <span class="span">WEB APPLICATIONS</span> for your business.
+      <div class="central-div">
+        <p class="moi">Work experience</p>
+        <hr class="horizontal" />
+        <div class="site-settings">
+          <div class="site">
+            <button
+              class="experience1"
+              :class="{ rotate: showDetails, highlight: highDetails }"
+              @click="writeDetails"
+              @mouseover="startHover()"
+              @mouseleave="stopHover()"
+            >
+              <p class="org" :class="{ bold: showDetails }">Acumen Digital</p>
+            </button>
+
+            <button
+              class="experience"
+              :class="{ rotate: showDetails1, highlight: highDetails1 }"
+              @click="writeDetails1"
+              @mouseover="startHover1()"
+              @mouseleave="stopHover1()"
+            >
+              <p class="org" :class="{ bold: showDetails1 }">
+                Nigeria Security Printing and Minting
+              </p>
+            </button>
+            <button
+              class="experience"
+              :class="{ rotate: showDetails2, highlight: highDetails2 }"
+              @click="writeDetails2"
+              @mouseover="startHover2()"
+              @mouseleave="stopHover2()"
+            >
+              <p class="org" :class="{ bold: showDetails2 }">Nasco</p>
+            </button>
+          </div>
+          <hr class="ruling" />
+          <Acumen
+            v-if="showAcumen"
+            class="insert"
+            :class="{ bring: showAcumen }"
+          ></Acumen>
+          <Nasco
+            v-if="showNasco"
+            class="insert"
+            :class="{ bring: showNasco }"
+          ></Nasco>
+          <Nspm
+            v-if="showNspm"
+            class="insert"
+            :class="{ bring: showNspm }"
+          ></Nspm>
+        </div>
+      </div>
+    </section>
+    <section class="work-load">
+      <div class="central-div">
+        <p class="moi">Projects</p>
+        <hr class="horizontal" />
+        <div class="wraith">
+          <p class="projects-text">Welcome to my Projects Section</p>
+          <p class="projects-intro">
+            Explore my work, one project at a time. Each project is like a
+            puzzle piece in my journey as a software engineer and technology
+            enthusiast. Click on a project below to view the demo site.
           </p>
-          <P class="description"
-            >Use these dynamic websites to interact with customers, sell goods
-            and services, pass information and recieve information. These could
-            include online forms, shopping carts, word processors and file
-            conversion websites.</P
+        </div>
+        <div class="row-div">
+          <a
+            href="https://master--keen-custard-aaed08.netlify.app/"
+            target="blank"
+            ><div class="project"></div
+          ></a>
+          <a
+            href="https://master--lambent-cannoli-619c43.netlify.app/"
+            target="blank"
           >
-        </div>
-        <div class="duties">
-          <img src="blue-mail.svg" class="icons" />
-          <p class="web">Email Templates</p>
-          <p class="lorem">
-            Create beautiful <span class="span">EMAIL TEMPLATES</span> for your
-            business.
-          </p>
-          <p class="description">
-            Send html mails to a mail list and advertise your service or
-            business.
-          </p>
-        </div>
-        <div class="duties">
-          <img src="red-site.svg" class="icons" />
-          <p class="web">Static Web Pages</p>
-          <p class="lorem">
-            Create <span class="span"> STATIC WEBSITES</span> for your business.
-          </p>
-          <p class="description">
-            These are small websites that are limited in content, and don't
-            require frequent updates. This includes brochure websites, one-off
-            landing pages, and other informational or read-only sites.
-          </p>
+            <div class="project-two"></div
+          ></a>
+          <a href="https://master--chic-maamoul-84c7dd.netlify.app/" target="blank">
+            <div class="project-three"></div>
+          </a>
+          <div class="project-four"></div>
         </div>
       </div>
     </section>
@@ -115,10 +161,83 @@
 </template>
 
 <script>
-import { onMounted, onUnmounted } from "vue";
 export default {
   name: "IndexPage",
-  data: () => {},
+  data() {
+    return {
+      showDetails: true,
+      showDetails1: false,
+      showDetails2: false,
+      highDetails: false,
+      highDetails1: false,
+      highDetails2: false,
+      showAcumen: true,
+      showNasco: false,
+      showNspm: false,
+    };
+  },
+
+  methods: {
+    writeDetails() {
+      this.showDetails = true;
+      this.showDetails1 = false;
+      this.showDetails2 = false;
+      this.highDetails = false;
+      this.showAcumen = true;
+      this.showNspm = false;
+      this.showNasco = false;
+    },
+
+    writeDetails1() {
+      this.showDetails1 = true;
+      this.showDetails = false;
+      this.showDetails2 = false;
+      this.highDetails1 = false;
+      this.showNspm = true;
+      this.showAcumen = false;
+      this.showNasco = false;
+    },
+
+    writeDetails2() {
+      this.showDetails2 = true;
+      this.showDetails1 = false;
+      this.showDetails = false;
+      this.highDetails2 = false;
+      this.showNasco = true;
+      this.showNspm = false;
+      this.showAcumen = false;
+    },
+
+    startHover() {
+      if (this.showDetails == false) {
+        this.highDetails = true;
+      }
+    },
+
+    startHover1() {
+      if (this.showDetails1 == false) {
+        this.highDetails1 = true;
+      }
+    },
+
+    startHover2() {
+      if (this.showDetails2 == false) {
+        this.highDetails2 = true;
+      }
+    },
+
+    stopHover() {
+      this.highDetails = false;
+    },
+
+    stopHover1() {
+      this.highDetails1 = false;
+    },
+
+    stopHover2() {
+      this.highDetails2 = false;
+    },
+  },
 };
 </script>
 
@@ -130,25 +249,19 @@ export default {
 }
 
 .top-shelf {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   margin: 0 auto 0 auto;
-  padding-top: 115px;
-  align-items: center;
   scroll-snap-align: start;
   height: auto;
+  padding: 115px 0 115px 0;
 }
 
 .about-layer {
-  display: flex;
-  flex-direction: column;
   width: 100%;
-  margin: 115px auto 0 auto;
-  align-items: center;
+  margin: 0 auto 0 auto;
   scroll-snap-align: start;
   height: auto;
-  padding-top: 115px;
+  padding: 115px 0 115px 0;
 }
 
 .central-div {
@@ -157,6 +270,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  height: 100%;
+  padding: 0 0 0 0;
 }
 
 .profile-pic {
@@ -166,11 +281,13 @@ export default {
 }
 
 .intro {
+  width: 649px;
+  margin: 0 auto 0 auto;
   display: flex;
   flex-direction: column;
-  margin: 0 0 0 0;
-  display: inline-block;
-  width: fit-content;
+  align-items: flex-start;
+  height: 100%;
+  padding: 0 0 0 0;
 }
 
 .me {
@@ -193,26 +310,12 @@ export default {
   font-weight: 400;
   font-size: 27px;
   margin: 0 0 0 0;
-  color: rgb(172, 138, 138);
+  color: #fff5ee;
 }
 
 .horizontal {
   width: 100%;
-  color: rgb(195, 190, 190);
-  background: rgb(195, 190, 190);
-}
-
-.apost {
-  color: rgb(195, 190, 190);
-  font-size: 40px;
-  font-family: "Aboreto-Regular";
-}
-
-.apost2 {
-  color: rgb(195, 190, 190);
-  font-size: 40px;
-  justify-self: flex-end;
-  font-family: "Aboreto-Regular";
+  border: 1px solid #09212e;
 }
 
 .i-am {
@@ -228,15 +331,21 @@ export default {
   position: relative;
 }
 
-.about-grid {
-  display: grid;
-  width: 649px;
-  height: max-content;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 240px 240px;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  grid-row: 30px;
+.about-flex {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: row;
+  align-items: center;
+  margin: 32px auto 0 auto;
+}
+
+.about-flex1 {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: row;
+  margin: 64px auto 0 auto;
 }
 
 .second-grid {
@@ -244,19 +353,17 @@ export default {
   width: 280px;
   height: 100%;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 33.3% 33.3% 33.3%;
-  grid-row: 30px;
-  justify-content: space-between;
+  grid-template-rows: 33% 33% 33%;
+  align-items: end;
   margin: auto 0 0 0;
-  background: orange;
 }
 
 .grid-item {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
 }
 
 .box {
@@ -294,7 +401,7 @@ export default {
 }
 
 .desc {
-  font-family: "RobotoMono-VariableFont_wght";
+  font-family: "Raleway-VariableFont_wght";
   font-weight: 400;
   font-size: 16px;
   color: #d8b5b5;
@@ -304,8 +411,8 @@ export default {
 }
 
 .frame {
+  color: rgb(195, 190, 190);
   font-family: "Raleway-VariableFont_wght";
-  color: #fcf5e5;
   font-size: 16px;
   text-align: justify;
   margin: 0;
@@ -316,6 +423,10 @@ export default {
 }
 
 .frame:nth-child(4) {
+  justify-self: end;
+}
+
+.frame:nth-child(6) {
   justify-self: end;
 }
 
@@ -366,21 +477,18 @@ export default {
     border-color: white;
   }
 
-  0% {
-    border-color: transparent;
-  }
   50% {
-    border-color: white;
+    border-color: transparent;
   }
   66% {
-    border-color: transparent;
+    border-color: white;
   }
 
   83% {
-    border-color: white;
+    border-color: transparent;
   }
   100% {
-    border-color: transparent;
+    border-color: white;
   }
 }
 
@@ -449,88 +557,230 @@ export default {
 }
 
 .last-layer {
+  width: 100%;
+  margin: 0 auto 0 auto;
+  scroll-snap-align: start;
+  height: auto;
+  padding: 115px 0 115px 0;
+}
+
+.site-settings {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.site {
+  height: 480px;
+  width: 36%;
   display: flex;
   flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  margin: 30px 0 0 0;
+}
+
+.ruling {
+  border: 2px solid #d8b5b5;
+  margin: 30px auto 0 auto;
+}
+
+.experience {
+  margin: 25px 0 0 0;
+  width: 90%;
   height: auto;
-  padding: 0 0 70px 0;
-  scroll-snap-align: start;
-  background: wheat;
+  cursor: pointer;
+  border-radius: 12px;
+  border: none;
+  background: #ebe9e9;
 }
 
-.services {
-  font-family: "Raleway-VariableFont_wght";
-  font-weight: 0;
-  font-size: 22px;
-  margin: 70px auto 0 auto;
-  text-align: center;
+.experience1 {
+  margin: 0 0 0 0;
+  width: 90%;
+  height: auto;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: #ebe9e9;
 }
 
-.do {
-  font-family: "Aboreto-Regular";
-  font-weight: 800;
-  font-size: 46px;
-  color: rgb(63, 50, 50);
-  text-align: center;
-  margin: 70px auto 0 auto;
+.rotate {
+  border-radius: 12px;
+  background: rgb(183, 196, 178);
+  border: none;
+  cursor: pointer;
+  animation: clicked 0.5s ease-in-out forwards;
 }
 
-.duties {
-  width: 450px;
-  height: 280px;
-  background: linear-gradient(180deg, #f5f5f5, #e9ddd4);
-  backdrop-filter: saturate(180%) blur(10px);
-  margin: 70px 50px;
-}
-
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  .duties {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+@keyframes clicked {
+  0% {
+    transform: scaleX(97%);
+  }
+  25% {
+    transform: scaleX(100%);
+  }
+  50% {
+    transform: scaleX(103%);
+  }
+  100% {
+    transform: scaleX(106%);
   }
 }
 
-.duties-container {
-  display: flex;
-  flex-direction: row;
+.insert {
+  margin: auto;
 }
 
-.icons {
-  width: 35px;
-  height: 35px;
-  margin: 30px 0 0 30px;
+.bring {
+  animation: ship 0.8s ease-in forwards;
 }
 
-.web {
-  margin: 20px 0 0 30px;
-  color: #685612;
-  text-decoration: solid;
-  font-size: 20px;
+@keyframes ship {
+  0% {
+    transform: translateY(-12%);
+    opacity: 0.1;
+  }
+  25% {
+    transform: translateY(-9%);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-6%);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateY(-3%);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.highlight {
+  background: rgb(227, 243, 221);
+}
+
+.org {
   font-family: "Raleway-VariableFont_wght";
-  font-weight: 900;
+  font-weight: 800;
+  font-size: 12px;
+  color: #767872;
 }
 
-.span {
-  color: #685612;
-  text-decoration: solid;
-  font-size: 15px;
+.bold {
   font-family: "Raleway-VariableFont_wght";
-  font-weight: 600;
-}
-
-.lorem {
-  font-family: "Raleway-VariableFont_wght";
-  font-weight: 40;
+  font-weight: 800;
   font-size: 14px;
-  margin: 20px 25px 0 30px;
-  font-weight: 300;
+  color: rgb(68, 149, 68);
 }
 
-.description {
+#prince {
   margin: 20px 25px 0 30px;
   font-family: "Aboreto-Regular";
   font-weight: 3;
   font-size: 13px;
   font-weight: 200;
+}
+
+.work-load {
+  width: 100%;
+  margin: 0 auto 0 auto;
+  scroll-snap-align: start;
+  height: auto;
+  padding: 112px 0 112px 0;
+}
+
+.row-div {
+  width: 100%;
+  height: 640px;
+  margin: 30px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+}
+
+.project {
+  width: 350px;
+  min-height: 400px;
+  background: url("~/assets/xyz.png");
+  background-position: center;
+  background-size: 350px 400px;
+  background-repeat: no-repeat;
+  margin: 30px auto 0 auto;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.project-two {
+  width: 350px;
+  min-height: 400px;
+  background: url("~/assets/yohagi.png");
+  background-position: center;
+  background-size: 350px 400px;
+  background-repeat: no-repeat;
+  margin: 30px auto 0 auto;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.project-three {
+  width: 350px;
+  min-height: 400px;
+  background: url("~/assets/robin-1.png");
+  background-position: center;
+  background-size: 350px 400px;
+  background-repeat: no-repeat;
+  margin: 30px auto 0 auto;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.project-four {
+  width: 350px;
+  min-height: 400px;
+  margin: 30px auto 0 auto;
+  background: #385664;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.wraith {
+  margin: 0 auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
+  height: auto;
+  padding: 0 30px 0 30px;
+}
+
+.projects-text {
+  font-family: "Raleway-VariableFont_wght";
+  color: #fff5ee;
+  font-weight: 400;
+  margin: 10px 0 10px 0;
+  font-size: 20px;
+}
+
+.projects-intro {
+  color: #d8b5b5;
+  font-family: "Raleway-VariableFont_wght";
+  font-weight: 200;
+  font-size: 16px;
+  margin: 0;
 }
 
 @media (max-width: 1309px) {
@@ -540,18 +790,6 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
-
-  .duties-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .duties {
-    width: 450px;
-    height: 280px;
-    background: rgb(235, 226, 226);
-    margin: 20px auto 0 auto;
   }
 
   .top-shelf {
@@ -566,30 +804,40 @@ export default {
   }
 
   .intro {
-    margin-left: 8px;
+    width: 649px;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    padding: 0 0 0 0;
   }
 
   .personal-logo {
     height: fit-content;
     width: 80%;
   }
-
-  .do {
-    font-family: "Aboreto-Regular";
-    font-weight: 800;
-    font-size: 36px;
-    color: rgb(63, 50, 50);
-    text-align: center;
-    margin: 70px auto 0 auto;
-  }
 }
 
 @media (max-width: 450px) {
-  .duties {
-    width: 95%;
-    height: 320px;
-    background: rgb(235, 226, 226);
-    margin: 20px auto 0 auto;
+
+  
+
+  .intro{
+    width: 96%;
+    margin: o auto 0 auto;
+  }
+  .hello{
+   font-size: 17px;
+  }
+
+  .chizalum{
+    font-size: 30px;
+    width: 370px;
+  }
+
+  i-am{
+    
   }
 }
 </style>
