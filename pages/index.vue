@@ -820,7 +820,9 @@ export default {
 }
 
 @media (max-width: 450px) {
-
+.central-div{
+  width: 96%;
+}
   
 
   .intro{
@@ -836,12 +838,16 @@ export default {
     width: 370px;
   }
 
-  .bold{
+  .i-am{
     font-size: 26px;
   }
 
   .box{
     font-size: 26px;
+  }
+  .as{
+    width: 96%;
+    margin: 0 auto 0 auto;
   }
 }
 </style>
