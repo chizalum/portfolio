@@ -836,8 +836,12 @@ export default {
     width: 370px;
   }
 
-  i-am{
-    
+  .bold{
+    font-size: 26px;
+  }
+
+  .box{
+    font-size: 26px;
   }
 }
 </style>
