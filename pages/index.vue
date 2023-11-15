@@ -140,20 +140,46 @@
         </div>
         <div class="row-div">
           <a
+            class="project"
             href="https://master--keen-custard-aaed08.netlify.app/"
             target="blank"
-            ><div class="project"></div
-          ></a>
+          >
+            <div class="blur"></div>
+            <div class="banner">
+              <button class="writings">
+                XYZ Logistics<br /><span class="admin">Admin Dashboard</span>
+              </button>
+            </div>
+          </a>
+
           <a
+            class="project-two"
             href="https://master--lambent-cannoli-619c43.netlify.app/"
             target="blank"
           >
-            <div class="project-two"></div
-          ></a>
-          <a href="https://master--chic-maamoul-84c7dd.netlify.app/" target="blank">
-            <div class="project-three"></div>
+            <div class="blur-two"></div>
+            <div class="banner-two">
+              <button class="writings-two">
+                Yohagi Store<br /><span class="admin-two">Online Store</span>
+              </button>
+            </div>
           </a>
-          <div class="project-four"></div>
+
+
+          <a
+            class="project-three"
+            href="https://master--chic-maamoul-84c7dd.netlify.app/"
+            target="blank"
+          >
+            <div class="blur-three"></div>
+            <div class="banner-three">
+              <button class="writings-three">
+                Robin App<br /><span class="admin-three">Landing Page</span>
+              </button>
+            </div>
+          </a>
+
+
         </div>
       </div>
     </section>
@@ -514,7 +540,7 @@ export default {
   white-space: nowrap;
   overflow: hidden;
   animation: typing 4s steps(19, end), cursor 6s step-end infinite;
-  width: 649px;
+  width: 600px;
 }
 
 .buttons {
@@ -578,8 +604,8 @@ export default {
   width: 36%;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   margin: 30px 0 0 0;
 }
 
@@ -631,9 +657,6 @@ export default {
   }
 }
 
-.insert {
-  margin: auto;
-}
 
 .bring {
   animation: ship 0.8s ease-in forwards;
@@ -706,65 +729,223 @@ export default {
 }
 
 .project {
-  width: 350px;
+  min-width: 350px;
   min-height: 400px;
+  margin: 30px auto 0 auto;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+}
+
+.blur {
   background: url("~/assets/xyz.png");
   background-position: center;
   background-size: 350px 400px;
   background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+  border-radius: 10px;
+}
+
+.banner {
+  width: 100%;
+  min-height: 50px;
+  background: none;
+  margin: 0;
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.project:hover .banner {
+  opacity: 1;
+}
+
+.project:hover .blur {
+  opacity: 0.3;
+  filter: blur(6px);
+}
+
+
+
+.project-two {
+  min-width: 350px;
+  min-height: 400px;
   margin: 30px auto 0 auto;
   border-radius: 16px;
   border: none;
   cursor: pointer;
+  text-decoration: none;
+  position: relative;
 }
 
-.project-two {
-  width: 350px;
-  min-height: 400px;
+.blur-two {
   background: url("~/assets/yohagi.png");
   background-position: center;
   background-size: 350px 400px;
   background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+  border-radius: 10px;
+}
+
+.banner-two {
+  width: 100%;
+  min-height: 50px;
+  background: none;
+  margin: 0;
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.project-two:hover .banner-two {
+  opacity: 1;
+}
+
+.project-two:hover .blur-two {
+  opacity: 0.3;
+  filter: blur(6px);
+}
+
+
+.project-three {
+  min-width: 350px;
+  min-height: 400px;
   margin: 30px auto 0 auto;
   border-radius: 16px;
   border: none;
   cursor: pointer;
+  text-decoration: none;
+  position: relative;
 }
 
-.project-three {
-  width: 350px;
-  min-height: 400px;
+.blur-three {
   background: url("~/assets/robin-1.png");
   background-position: center;
   background-size: 350px 400px;
   background-repeat: no-repeat;
-  margin: 30px auto 0 auto;
-  border-radius: 16px;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+  border-radius: 10px;
+}
+
+.banner-three {
+  width: 100%;
+  min-height: 50px;
+  background: none;
+  margin: 0;
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.project-three:hover .banner-three {
+  opacity: 1;
+}
+
+.project-three:hover .blur-three {
+  opacity: 0.3;
+  filter: blur(6px);
+}
+
+.writings {
+  width: 160px;
+  height: 50px;
+  border-radius: 12px;
+  background: #01151f;
   border: none;
+  font-family: "Raleway-VariableFont_wght";
+  font-size: 20px;
+  color: rgb(68, 149, 68);
   cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
 }
 
-.project-four {
-  width: 350px;
-  min-height: 400px;
-  margin: 30px auto 0 auto;
-  background: #385664;
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
-  border: 1px solid rgba(255, 255, 255, 1);
+.writings-two {
+  width: 160px;
+  height: 50px;
+  border-radius: 12px;
+  background: #01151f;
+  border: none;
+  font-family: "Raleway-VariableFont_wght";
+  font-size: 20px;
+  color: rgb(68, 149, 68);
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
 }
 
+.writings-three {
+  width: 160px;
+  height: 50px;
+  border-radius: 12px;
+  background: #01151f;
+  border: none;
+  font-family: "Raleway-VariableFont_wght";
+  font-size: 20px;
+  color: rgb(68, 149, 68);
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.admin {
+  font-size: 16px;
+  color: rgb(68, 149, 68);
+  font-weight: 400;
+}
+
+
+.admin-two{
+  font-size: 16px;
+  color: rgb(68, 149, 68);
+  font-weight: 400;
+}
+
+.admin-three {
+  font-size: 16px;
+  color: rgb(68, 149, 68);
+  font-weight: 400;
+}
 .wraith {
   margin: 0 auto 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
   height: auto;
-  padding: 0 30px 0 30px;
 }
 
 .projects-text {
@@ -783,71 +964,116 @@ export default {
   margin: 0;
 }
 
-@media (max-width: 1309px) {
-  .second-layer {
-    margin: 90px 0 0 0;
-    background: #e1eedd;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .top-shelf {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 115px auto 0 auto;
-  }
-
-  .profile-pic {
-    margin-left: 8px;
+@media (max-width: 685px) {
+  .central-div {
+    width: 96%;
+    margin: 0 auto 0 auto;
   }
 
   .intro {
-    width: 649px;
-    margin: 0 auto 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 100%;
-    padding: 0 0 0 0;
-  }
-
-  .personal-logo {
-    height: fit-content;
-    width: 80%;
-  }
-}
-
-@media (max-width: 450px) {
-.central-div{
-  width: 96%;
-}
-  
-
-  .intro{
     width: 96%;
-    margin: o auto 0 auto;
+    margin: 0 auto 0 auto;
   }
-  .hello{
-   font-size: 17px;
+  .hello {
+    font-size: 17px;
   }
 
-  .chizalum{
+  .chizalum {
     font-size: 30px;
-    width: 370px;
+    width: 300px;
   }
 
-  .i-am{
+  .i-am {
     font-size: 26px;
   }
 
-  .box{
+  .box {
     font-size: 26px;
   }
-  .as{
+  .as {
     width: 96%;
     margin: 0 auto 0 auto;
+  }
+
+  .profile-pic{
+    height: 150px;
+    width: 95%;
+  }
+
+  .desc{
+    width: 95%;
+    text-align: justify;
+    font-size: 12px;
+  }
+
+  .frame{
+    font-size: 12px;
+  }
+
+  .as{
+    font-size: 13px;
+  }
+
+  .second-grid{
+    width: 95%;
+  }
+
+  .btn-1{
+    width: 140px;
+    font-size: 16px;
+  }
+
+  .btn-2{
+    width: 140px;
+    font-size: 16px;
+  }
+
+  .moi{
+    font-size: 22px;
+  }
+
+  .org{
+    font-size: 8px;
+  }
+
+  .bold{
+    font-size: 10px;
+  }
+
+
+  .projects-text{
+    font-size: 18px;
+  }
+
+  .projects-intro{
+    font-size: 14px;
+  }
+
+  .project{
+    min-width: 300px;
+    min-height: 370px;
+  }
+
+  .project-two{
+    min-width: 300px;
+    min-height: 370px;
+  }
+
+  .project-three{
+    min-width: 300px;
+    min-height: 370px;
+  }
+
+  .blur{
+    background-size: 300px 370px;
+  }
+
+  .blur-two{
+    background-size: 300px 370px;
+  }
+
+  .blur-three{
+    background-size: 300px 370px;
   }
 }
 </style>

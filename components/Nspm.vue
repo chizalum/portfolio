@@ -4,7 +4,7 @@
       <div class="wraith-point">
         <P class="wraith"
           >Nigerian Security Printing and Minting
-          <span class="span"><br>Research and Development</span></P
+          <span class="span"><br>Research and Development Personnel</span></P
         >
         <p class="break">2023</p>
       </div>
@@ -37,13 +37,13 @@
 
 <style scoped>
 .light {
-  height: 480px;
+  height: auto;
   width: 60%;
   margin: 0 0 0 7px;
 }
 
 .light-header {
-  height: 40%;
+  height: 35%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -108,5 +108,27 @@
 
 .work {
   color: #fff5ee;
+}
+
+@media (max-width: 450px) {
+  .wraith{
+    font-size: 18px;
+  }
+
+  .span{
+    font-size: 14px;
+  }
+
+  .break{
+    font-size: 14px;
+  }
+
+  .regular{
+    font-size: 13px;
+  }
+
+  .freight{
+    font-size: 11px;
+  }
 }
 </style>

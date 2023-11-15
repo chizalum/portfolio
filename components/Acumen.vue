@@ -39,7 +39,7 @@
 
 <style scoped>
 .light {
-  height: 480px;
+  height: auto;
   width: 60%;
   margin: 0 0 0 7px;
 }
@@ -109,5 +109,28 @@
 
 .work {
   color: #fff5ee;
+}
+
+@media (max-width: 450px) {
+  .wraith{
+    font-size: 18px;
+  }
+
+  .span{
+    font-size: 14px;
+  }
+
+  .break{
+    font-size: 14px;
+  }
+
+  .regular{
+    font-size: 13px;
+  }
+
+  .freight{
+    font-size: 11px;
+  }
+
 }
 </style>
