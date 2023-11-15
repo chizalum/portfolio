@@ -23,7 +23,7 @@
             <button class="btn-1">Contact Me</button></a
           >
           <a
-            href="https://drive.google.com/file/d/1ybXWFFsz5Ituwu8XqPlaNIiJzLC62rho/view?usp=sharing"
+            href="https://docs.google.com/document/d/143fc9sRif58tH5U_LwdI_0OIikm5VgmlLWYEOHKWVAo/edit?usp=sharing"
             target="blank"
           >
             <button class="btn-2">Resume</button></a
@@ -494,27 +494,27 @@ export default {
 
 @keyframes cursor {
   0% {
-    border-color: white;
-  }
-  17% {
     border-color: transparent;
   }
+  17% {
+    border-color: grey;
+  }
   33% {
-    border-color: white;
+    border-color: transparent;
   }
 
   50% {
-    border-color: transparent;
+    border-color: grey;
   }
   66% {
-    border-color: white;
+    border-color: transparent;
   }
 
   83% {
-    border-color: transparent;
+    border-color: grey;
   }
   100% {
-    border-color: white;
+    border-color: transparent;
   }
 }
 
@@ -536,10 +536,10 @@ export default {
   font-size: 59px;
   color: #fff5ee;
   margin: 70px 0 0 0;
-  border-right: 5px solid white;
+  border-right: 5px solid transparent;
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 4s steps(19, end), cursor 6s step-end infinite;
+  animation: typing 4s steps(19, end), cursor 4s step-end 1 ;
   width: 600px;
 }
 
