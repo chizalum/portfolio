@@ -20,14 +20,10 @@
         </div>
         <div class="buttons">
           <a href="mailto:joshuaegbuonu@gmail.com" target="blank">
-            <button class="btn-1">Contact Me</button></a
-          >
-          <a
-            href="https://docs.google.com/document/d/143fc9sRif58tH5U_LwdI_0OIikm5VgmlLWYEOHKWVAo/edit?usp=sharing"
-            target="blank"
-          >
-            <button class="btn-2">Resume</button></a
-          >
+            <button class="btn-1">Contact Me</button></a>
+          <a href="https://docs.google.com/document/d/143fc9sRif58tH5U_LwdI_0OIikm5VgmlLWYEOHKWVAo/edit?usp=sharing"
+            target="blank">
+            <button class="btn-2">Resume</button></a>
         </div>
       </div>
     </section>
@@ -76,53 +72,26 @@
         <hr class="horizontal" />
         <div class="site-settings">
           <div class="site">
-            <button
-              class="experience1"
-              :class="{ rotate: showDetails, highlight: highDetails }"
-              @click="writeDetails"
-              @mouseover="startHover()"
-              @mouseleave="stopHover()"
-            >
+            <button class="experience1" :class="{ rotate: showDetails, highlight: highDetails }" @click="writeDetails"
+              @mouseover="startHover()" @mouseleave="stopHover()">
               <p class="org" :class="{ bold: showDetails }">Acumen Digital</p>
             </button>
 
-            <button
-              class="experience"
-              :class="{ rotate: showDetails1, highlight: highDetails1 }"
-              @click="writeDetails1"
-              @mouseover="startHover1()"
-              @mouseleave="stopHover1()"
-            >
+            <button class="experience" :class="{ rotate: showDetails1, highlight: highDetails1 }" @click="writeDetails1"
+              @mouseover="startHover1()" @mouseleave="stopHover1()">
               <p class="org" :class="{ bold: showDetails1 }">
                 Nigeria Security Printing and Minting
               </p>
             </button>
-            <button
-              class="experience"
-              :class="{ rotate: showDetails2, highlight: highDetails2 }"
-              @click="writeDetails2"
-              @mouseover="startHover2()"
-              @mouseleave="stopHover2()"
-            >
+            <button class="experience" :class="{ rotate: showDetails2, highlight: highDetails2 }" @click="writeDetails2"
+              @mouseover="startHover2()" @mouseleave="stopHover2()">
               <p class="org" :class="{ bold: showDetails2 }">Nasco</p>
             </button>
           </div>
           <hr class="ruling" />
-          <Acumen
-            v-if="showAcumen"
-            class="insert"
-            :class="{ bring: showAcumen }"
-          ></Acumen>
-          <Nasco
-            v-if="showNasco"
-            class="insert"
-            :class="{ bring: showNasco }"
-          ></Nasco>
-          <Nspm
-            v-if="showNspm"
-            class="insert"
-            :class="{ bring: showNspm }"
-          ></Nspm>
+          <Acumen v-if="showAcumen" class="insert" :class="{ bring: showAcumen }"></Acumen>
+          <Nasco v-if="showNasco" class="insert" :class="{ bring: showNasco }"></Nasco>
+          <Nspm v-if="showNspm" class="insert" :class="{ bring: showNspm }"></Nspm>
         </div>
       </div>
     </section>
@@ -139,11 +108,7 @@
           </p>
         </div>
         <div class="row-div">
-          <a
-            class="project"
-            href="https://master--keen-custard-aaed08.netlify.app/"
-            target="blank"
-          >
+          <a class="project" href="https://master--keen-custard-aaed08.netlify.app/" target="blank">
             <div class="blur"></div>
             <div class="banner">
               <button class="writings">
@@ -152,11 +117,7 @@
             </div>
           </a>
 
-          <a
-            class="project-two"
-            href="https://master--lambent-cannoli-619c43.netlify.app/"
-            target="blank"
-          >
+          <a class="project-two" href="https://master--lambent-cannoli-619c43.netlify.app/" target="blank">
             <div class="blur-two"></div>
             <div class="banner-two">
               <button class="writings-two">
@@ -166,11 +127,7 @@
           </a>
 
 
-          <a
-            class="project-three"
-            href="https://master--chic-maamoul-84c7dd.netlify.app/"
-            target="blank"
-          >
+          <a class="project-three" href="https://master--chic-maamoul-84c7dd.netlify.app/" target="blank">
             <div class="blur-three"></div>
             <div class="banner-three">
               <button class="writings-three">
@@ -277,7 +234,7 @@ export default {
 .top-shelf {
   width: 100%;
   margin: 0 auto 0 auto;
-  scroll-snap-align: start;
+  scroll-snap-align: flex-start;
   height: auto;
   padding: 115px 0 115px 0;
 }
@@ -285,7 +242,7 @@ export default {
 .about-layer {
   width: 100%;
   margin: 0 auto 0 auto;
-  scroll-snap-align: start;
+  scroll-snap-align: flex-start;
   height: auto;
   padding: 115px 0 115px 0;
 }
@@ -460,9 +417,11 @@ export default {
   0% {
     opacity: 0;
   }
+
   17% {
     opacity: 1;
   }
+
   33% {
     opacity: 0;
   }
@@ -472,9 +431,11 @@ export default {
   33% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   66% {
     opacity: 0;
   }
@@ -484,9 +445,11 @@ export default {
   66% {
     opacity: 0;
   }
+
   83% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -496,9 +459,11 @@ export default {
   0% {
     border-color: transparent;
   }
+
   17% {
     border-color: grey;
   }
+
   33% {
     border-color: transparent;
   }
@@ -506,6 +471,7 @@ export default {
   50% {
     border-color: grey;
   }
+
   66% {
     border-color: transparent;
   }
@@ -513,6 +479,7 @@ export default {
   83% {
     border-color: grey;
   }
+
   100% {
     border-color: transparent;
   }
@@ -522,9 +489,11 @@ export default {
   0% {
     width: 0%;
   }
+
   50% {
     width: 50%;
   }
+
   100% {
     width: 100%;
   }
@@ -539,7 +508,7 @@ export default {
   border-right: 5px solid transparent;
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 4s steps(19, end), cursor 4s step-end 1 ;
+  animation: typing 4s steps(19, end), cursor 4s step-end 1;
   width: 600px;
 }
 
@@ -569,6 +538,7 @@ export default {
 .btn-2:hover {
   background: rgb(227, 243, 221);
 }
+
 .btn-2 {
   width: 160px;
   height: 50px;
@@ -585,7 +555,7 @@ export default {
 .last-layer {
   width: 100%;
   margin: 0 auto 0 auto;
-  scroll-snap-align: start;
+  scroll-snap-align: flex-start;
   height: auto;
   padding: 115px 0 115px 0;
 }
@@ -646,12 +616,15 @@ export default {
   0% {
     transform: scaleX(97%);
   }
+
   25% {
     transform: scaleX(100%);
   }
+
   50% {
     transform: scaleX(103%);
   }
+
   100% {
     transform: scaleX(106%);
   }
@@ -667,18 +640,22 @@ export default {
     transform: translateY(-12%);
     opacity: 0.1;
   }
+
   25% {
     transform: translateY(-9%);
     opacity: 0.3;
   }
+
   50% {
     transform: translateY(-6%);
     opacity: 0.5;
   }
+
   75% {
     transform: translateY(-3%);
     opacity: 0.7;
   }
+
   100% {
     transform: translateY(0%);
     opacity: 1;
@@ -714,7 +691,7 @@ export default {
 .work-load {
   width: 100%;
   margin: 0 auto 0 auto;
-  scroll-snap-align: start;
+  scroll-snap-align: flex-start;
   height: auto;
   padding: 112px 0 112px 0;
 }
@@ -927,7 +904,7 @@ export default {
 }
 
 
-.admin-two{
+.admin-two {
   font-size: 16px;
   color: rgb(68, 149, 68);
   font-weight: 400;
@@ -938,6 +915,7 @@ export default {
   color: rgb(68, 149, 68);
   font-weight: 400;
 }
+
 .wraith {
   margin: 0 auto 0 auto;
   display: flex;
@@ -974,6 +952,7 @@ export default {
     width: 96%;
     margin: 0 auto 0 auto;
   }
+
   .hello {
     font-size: 17px;
   }
@@ -990,89 +969,90 @@ export default {
   .box {
     font-size: 26px;
   }
+
   .as {
     width: 96%;
     margin: 0 auto 0 auto;
   }
 
-  .profile-pic{
+  .profile-pic {
     height: 150px;
     width: 95%;
   }
 
-  .desc{
+  .desc {
     width: 95%;
     text-align: justify;
     font-size: 12px;
   }
 
-  .frame{
+  .frame {
     font-size: 12px;
   }
 
-  .as{
+  .as {
     font-size: 13px;
   }
 
-  .second-grid{
+  .second-grid {
     width: 95%;
   }
 
-  .btn-1{
+  .btn-1 {
     width: 140px;
     font-size: 16px;
   }
 
-  .btn-2{
+  .btn-2 {
     width: 140px;
     font-size: 16px;
   }
 
-  .moi{
+  .moi {
     font-size: 22px;
   }
 
-  .org{
+  .org {
     font-size: 8px;
   }
 
-  .bold{
+  .bold {
     font-size: 10px;
   }
 
 
-  .projects-text{
+  .projects-text {
     font-size: 18px;
   }
 
-  .projects-intro{
+  .projects-intro {
     font-size: 14px;
   }
 
-  .project{
+  .project {
     min-width: 300px;
     min-height: 370px;
   }
 
-  .project-two{
+  .project-two {
     min-width: 300px;
     min-height: 370px;
   }
 
-  .project-three{
+  .project-three {
     min-width: 300px;
     min-height: 370px;
   }
 
-  .blur{
+  .blur {
     background-size: 300px 370px;
   }
 
-  .blur-two{
+  .blur-two {
     background-size: 300px 370px;
   }
 
-  .blur-three{
+  .blur-three {
     background-size: 300px 370px;
   }
 }
